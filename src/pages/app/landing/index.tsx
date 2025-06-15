@@ -11,8 +11,10 @@ import {
   Star,
   Sparkles,
 } from "lucide-react";
+import { useNavigate } from "react-router";
 
 export default function LandingPage() {
+  const navigate = useNavigate();
   const features = [
     {
       icon: Users,
@@ -84,10 +86,17 @@ export default function LandingPage() {
               <h1 className="text-xl font-bold text-white">GuildSync</h1>
             </div>
             <div className="flex items-center gap-4">
-              <Button variant="ghost" className="text-white hover:bg-white/20">
+              <Button
+                onClick={() => navigate("/login")}
+                variant="ghost"
+                className="text-white hover:bg-white/20"
+              >
                 Entrar
               </Button>
-              <Button className="bg-white text-[#5865F2] hover:bg-white/90">
+              <Button
+                onClick={() => navigate("/signup")}
+                className="bg-white text-[#5865F2] hover:bg-white/90"
+              >
                 Começar Grátis
               </Button>
             </div>
@@ -119,6 +128,7 @@ export default function LandingPage() {
             <Button
               size="lg"
               className="h-12 bg-white px-8 text-[#5865F2] hover:bg-white/90"
+              onClick={() => navigate("/signup")}
             >
               Começar Grátis
               <ArrowRight className="ml-2 h-5 w-5" />

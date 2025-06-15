@@ -10,8 +10,19 @@ import UsersPage from "./pages/app/users";
 import LoginPage from "./pages/app/login";
 import SignupPage from "./pages/app/signup";
 import SettingsPage from "./pages/app/settings";
-import RulesPage from "./pages/rules";
-import HistoryPage from "./pages/history";
+import RulesPage from "./pages/app/rules";
+import HistoryPage from "./pages/app/history";
+import UserProfilePage from "./pages/app/profile";
+import ForgotPasswordPage from "./pages/app/forgot-password";
+import ConnectServerPage from "./pages/app/connect-serve";
+import CheckoutPage from "./pages/app/checkout";
+import AccountVerificationPage from "./pages/app/account-verification";
+import ExampleUsage from "./components/modals/example-usage";
+import ReportsPage from "./pages/app/reports";
+import ServersPage from "./pages/app/servers";
+import AutomationsPage from "./pages/app/automations";
+import CampaignsPage from "./pages/app/compaigns";
+import AnalyticsPage from "./pages/app/analytics";
 
 export const router = createBrowserRouter([
   {
@@ -27,23 +38,23 @@ export const router = createBrowserRouter([
     element: <LoginPage />,
   },
   {
-    path: "/sigup",
+    path: "/signup",
     element: <SignupPage />,
   },
   {
-    path: "plans",
-    element: <PlansPage />,
+    path: "/forgot-password",
+    element: <ForgotPasswordPage />,
   },
+
   {
-    path: "/app",
+    path: "/",
     element: <Layout />,
     errorElement: <Error />,
     children: [
       {
-        path: "",
+        path: "dashboard",
         element: <Dashboard />,
       },
-
       {
         path: "users",
         element: <UsersPage />,
@@ -59,6 +70,50 @@ export const router = createBrowserRouter([
       {
         path: "history",
         element: <HistoryPage />,
+      },
+      {
+        path: "/plans",
+        element: <PlansPage />,
+      },
+      {
+        path: "/profile",
+        element: <UserProfilePage />,
+      },
+      {
+        path: "/connect-server",
+        element: <ConnectServerPage />,
+      },
+      {
+        path: "/checkout",
+        element: <CheckoutPage />,
+      },
+      {
+        path: "/verification",
+        element: <AccountVerificationPage />,
+      },
+      {
+        path: "/examples-modals",
+        element: <ExampleUsage />,
+      },
+      {
+        path: "/reports",
+        element: <ReportsPage />,
+      },
+      {
+        path: "/servers",
+        element: <ServersPage />,
+      },
+      {
+        path: "/automations",
+        element: <AutomationsPage />,
+      },
+      {
+        path: "/campaigns",
+        element: <CampaignsPage />,
+      },
+      {
+        path: "/analytics",
+        element: <AnalyticsPage />,
       },
     ],
   },

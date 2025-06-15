@@ -198,7 +198,7 @@ export default function SignupPage() {
               <div className="text-center text-sm text-slate-600">
                 Já tem uma conta?{" "}
                 <a
-                  href="#"
+                  href="/login"
                   className="font-medium text-[#5865F2] hover:text-[#4752C4]"
                 >
                   Fazer login

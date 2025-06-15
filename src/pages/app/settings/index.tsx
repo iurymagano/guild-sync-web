@@ -55,7 +55,9 @@ export default function SettingsPage() {
                     src="/placeholder.svg?height=80&width=80"
                     alt="João Silva"
                   />
-                  <AvatarFallback className="text-2xl">JS</AvatarFallback>
+                  <AvatarFallback className="text-2xl text-neutral-400">
+                    JS
+                  </AvatarFallback>
                 </Avatar>
                 <div>
                   <Button
