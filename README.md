@@ -821,18 +821,18 @@ Resultado: 30% melhora nas notas, 85% retenção
 ## 🚀 Roadmap
 
 ### 📅 **Q1 2024 - Fundação** ✅
-- [x] **MVP Launch**: Versão inicial da plataforma
-- [x] **Discord Integration**: Integração completa com Discord
-- [x] **Payment System**: Sistema de pagamentos com Stripe
-- [x] **Basic Analytics**: Analytics básicos e dashboard
-- [x] **User Management**: Gestão básica de usuários
+- [ ] **MVP Launch**: Versão inicial da plataforma
+- [ ] **Discord Integration**: Integração completa com Discord
+- [ ] **Payment System**: Sistema de pagamentos com Stripe
+- [ ] **Basic Analytics**: Analytics básicos e dashboard
+- [ ] **User Management**: Gestão básica de usuários
 
 ### 📅 **Q2 2024 - Automação** ✅
-- [x] **Advanced Automations**: Sistema de automações avançado
-- [x] **Email Marketing**: Campanhas de email integradas
-- [x] **Mobile Responsive**: Interface totalmente responsiva
-- [x] **API v2**: API RESTful completa
-- [x] **Webhook System**: Sistema de webhooks robusto
+- [ ] **Advanced Automations**: Sistema de automações avançado
+- [ ] **Email Marketing**: Campanhas de email integradas
+- [ ] **Mobile Responsive**: Interface totalmente responsiva
+- [ ] **API v2**: API RESTful completa
+- [ ] **Webhook System**: Sistema de webhooks robusto
 
 ### 📅 **Q3 2024 - Inteligência** 🔄
 - [ ] **AI-Powered Insights**: Insights gerados por IA
