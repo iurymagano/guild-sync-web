@@ -23,6 +23,7 @@ import ServersPage from "./pages/app/servers";
 import AutomationsPage from "./pages/app/automations";
 import CampaignsPage from "./pages/app/compaigns";
 import AnalyticsPage from "./pages/app/analytics";
+import AllPagesShowcase from "./pages/app/all-pages";
 
 export const router = createBrowserRouter([
   {
@@ -44,6 +45,10 @@ export const router = createBrowserRouter([
   {
     path: "/forgot-password",
     element: <ForgotPasswordPage />,
+  },
+  {
+    path: "/all",
+    element: <AllPagesShowcase />,
   },
 
   {

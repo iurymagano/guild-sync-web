@@ -11,14 +11,6 @@ import {
   DropdownMenuLabel,
   DropdownMenuGroup,
 } from "@/components/ui/dropdown-menu";
-import {
-  NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-  NavigationMenuTrigger,
-} from "@/components/ui/navigation-menu";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Badge } from "@/components/ui/badge";
 import {
@@ -187,57 +179,59 @@ export function Layout() {
 
             {/* Desktop Navigation */}
             <div className="hidden items-center space-x-1 lg:flex">
-              <NavigationMenu>
-                <NavigationMenuList className="space-x-1">
-                  {navigationSections.map((section) => (
-                    <NavigationMenuItem key={section.title}>
-                      <NavigationMenuTrigger className="bg-transparent text-white hover:bg-white/20 data-[state=open]:bg-white/20">
+              <div className="hidden items-center space-x-1 lg:flex">
+                {navigationSections.map((section) => (
+                  <DropdownMenu key={section.title}>
+                    <DropdownMenuTrigger asChild>
+                      <Button
+                        variant="ghost"
+                        className="bg-transparent text-white hover:bg-white/20 data-[state=open]:bg-white/20"
+                      >
                         {section.title}
-                      </NavigationMenuTrigger>
-                      <NavigationMenuContent>
-                        <div className="w-80 p-4">
-                          <div className="grid gap-3">
-                            {section.items.map((item) => (
-                              <NavigationMenuLink key={item.name} asChild>
-                                <a
-                                  href={item.href}
-                                  className={`flex flex-row items-center gap-3 rounded-lg p-3 transition-colors hover:bg-slate-100 ${
-                                    item.current
-                                      ? "border border-[#5865F2]/20 bg-[#5865F2]/10"
-                                      : ""
-                                  }`}
+                        <ChevronDown className="ml-2 h-4 w-4" />
+                      </Button>
+                    </DropdownMenuTrigger>
+                    <DropdownMenuContent align="start" className="w-80 p-4">
+                      <div className="grid gap-3">
+                        {section.items.map((item) => (
+                          <DropdownMenuItem key={item.name} asChild>
+                            <a
+                              href={item.href}
+                              className={`flex cursor-pointer items-center gap-3 rounded-lg p-3 transition-colors hover:bg-slate-100 ${
+                                item.current
+                                  ? "border border-[#5865F2]/20 bg-[#5865F2]/10"
+                                  : ""
+                              }`}
+                            >
+                              <div
+                                className={`flex h-10 w-10 items-center justify-center rounded-lg ${
+                                  item.current
+                                    ? "bg-[#5865F2]/20"
+                                    : "bg-slate-100"
+                                }`}
+                              >
+                                <item.icon
+                                  className={`h-5 w-5 ${item.current ? "text-[#5865F2]" : "text-slate-600"}`}
+                                />
+                              </div>
+                              <div>
+                                <div
+                                  className={`font-medium ${item.current ? "text-[#5865F2]" : "text-slate-900"}`}
                                 >
-                                  <div
-                                    className={`flex h-10 w-10 items-center justify-center rounded-lg ${
-                                      item.current
-                                        ? "bg-[#5865F2]/20"
-                                        : "bg-slate-100"
-                                    }`}
-                                  >
-                                    <item.icon
-                                      className={`h-5 w-5 ${item.current ? "text-[#5865F2]" : "text-slate-600"}`}
-                                    />
-                                  </div>
-                                  <div>
-                                    <div
-                                      className={`font-medium ${item.current ? "text-[#5865F2]" : "text-slate-900"}`}
-                                    >
-                                      {item.name}
-                                    </div>
-                                    <div className="text-sm text-slate-500">
-                                      {item.description}
-                                    </div>
-                                  </div>
-                                </a>
-                              </NavigationMenuLink>
-                            ))}
-                          </div>
-                        </div>
-                      </NavigationMenuContent>
-                    </NavigationMenuItem>
-                  ))}
-                </NavigationMenuList>
-              </NavigationMenu>
+                                  {item.name}
+                                </div>
+                                <div className="text-sm text-slate-500">
+                                  {item.description}
+                                </div>
+                              </div>
+                            </a>
+                          </DropdownMenuItem>
+                        ))}
+                      </div>
+                    </DropdownMenuContent>
+                  </DropdownMenu>
+                ))}
+              </div>
 
               {/* Quick Actions */}
               <DropdownMenu>
